@@ -31,10 +31,13 @@ def calculator(originalString)
             calculations = calculations
         end
       end 
-      #puts "#{calculations}"
      answer.push(eval(calculations.join)) 
      calculations=[]
-  end   
-  #puts "#{answer}"
-  answer.join(",")
+    end
+
+  if answer == [1.0/0.0]
+    "Can't divide by zero!"
+  else 
+    answer = answer.join(",")
+  end
 end
